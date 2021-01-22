@@ -11,6 +11,7 @@
     <modules>
         <module>fileupload</module>
         <module>idempotent</module>
+        <module>idempotent-aop</module>
     </modules>
 
     <parent>
