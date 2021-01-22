@@ -1,13 +1,13 @@
 package pers.xzj.idempotent.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pers.xzj.idempotent.anno.Idempotent;
-import pers.xzj.idempotent.exception.IdempotentException;
 import pers.xzj.idempotent.token.TokenHelper;
+import pers.xzj.logging.TimeLog;
 
 /**
  * @Description hello
@@ -22,6 +22,7 @@ public class HelloController {
     private TokenHelper tokenHelper;
 
     @GetMapping("/getToken")
+    @TimeLog
     public String getToken() {
         return tokenHelper.createToken();
     }

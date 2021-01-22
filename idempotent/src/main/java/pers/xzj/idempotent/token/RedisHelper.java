@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
+import pers.xzj.idempotent.exception.IdempotentException;
+
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,7 +25,7 @@ public class RedisHelper {
             ops.set(key,value);
             redisTemplate.expire(key,timeout, TimeUnit.SECONDS);
         } catch (Exception e) {
-            return false;
+            throw new IdempotentException(e.getMessage());
         }
         return true;
     }
