@@ -7,3 +7,7 @@
 
 **幂等接口：**  [幂等接口](https://github.com/nevermore18/springboot-samples/tree/master/idempotent)
 
+**幂等接口-aop：**  [幂等接口-aop](https://github.com/nevermore18/springboot-samples/tree/master/idempotent-aop)
+
+**日志springboot-starter：**  [幂等接口-aop](https://github.com/nevermore18/springboot-samples/tree/master/logging-starter)
+
